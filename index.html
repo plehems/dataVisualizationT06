@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive 3D Charts</title>
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/visualisation.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrap">
+      <p class="site-title">TV energy consumption</p>
+    </div>
+  </header>
+
+  <main id="main" class="wrap" role="main" aria-labelledby="main-heading">
+    <div>
+        <h1>Energy Consumption for different TV screen types and sizes</h1>
+        <p>Most TV's on sale in Australia are LEF and they vary considerably in energy consumption.</p>
+
+        <!-- Filters (T06 expects a dedicated div/section for filters) -->
+        <section id="filters_screen" class="filters" aria-label="Screen technology filters"></section>
+
+        <!-- Chart container (T06 uses an SVG inside a responsive container) -->
+        <section id="histogram" class="responsive-svg-container" aria-label="Histogram of energy consumption"></section>
+
+        <!-- Chart container (T06 uses an SVG inside a responsive container) -->
+        <section id="scatterplot" class="responsive-svg-container" aria-label="TVs scatterplot"></section>
+
+        <p class="source-note">
+        Data: <code>Ex6_TVdata.csv</code> (Jan&nbsp;2025), columns incl. <em>energyConsumption</em> and <em>screenTech</em>.
+        </p>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap">
+      <p>&copy; Built with D3.js v7. Use the buttons to filter LCD / LED / OLED.</p>
+    </div>
+  </footer>
+
+  <!-- JS (order matters per T06: D3 → shared constants → chart → interactions → loader) -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="./js/load-data.js"></script>
+  <script src="./js/shared-constants.js"></script>
+  <script src="./js/interactions.js"></script>
+  <script src="./js/histogram.js"></script>
+  <script src="./js/scatterplot.js"></script>
+
+</body>
+</html>
