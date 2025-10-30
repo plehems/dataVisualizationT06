@@ -1,0 +1,8 @@
+/* Axes */
+.axis path, .axis line{ stroke: rgba(123,84,47,.35); } /* soft cocoa */
+.axis text{ fill: #5a3e28; font-size: 12px; }
+
+/* Bars (no strokes/outlines) */
+.bar{ shape-rendering: crispEdges; }
+
+/* Axis titles inherit text color from SVG text elements in JS */
